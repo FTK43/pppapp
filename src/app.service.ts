@@ -20,7 +20,7 @@ export class AppService {
   }
 
   private async getCountryFullName(isocode:string): Promise<string> {
-    const countries = await fs.readFile('resouces/countries.json');
+    const countries = await fs.readFile('resources/countries.json');
     const COUNTRY_ISO_TO_NAME: Map<string, string> = new Map(JSON.parse(countries));
 
     return COUNTRY_ISO_TO_NAME.get(isocode);
